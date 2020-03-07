@@ -1,8 +1,8 @@
 import UIKit
 
-class ViewControllerDelegation: UIViewController {
+class BasicArchViewController: UIViewController {
 
-    static let backgroundColor = UIColor.yellow
+    static let backgroundColor = UIColor.cyan
 
     private var saveButton: UIButton!
     private var clearButton: UIButton!
@@ -11,7 +11,7 @@ class ViewControllerDelegation: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = ViewControllerDelegation.backgroundColor
+        self.view.backgroundColor = BasicArchViewController.backgroundColor
 
         textField = createTextField()
         saveButton = createSaveButton()

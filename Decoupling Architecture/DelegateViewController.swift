@@ -1,17 +1,20 @@
 import UIKit
 
-class ViewControllerBasicArch: UIViewController {
+class DelegateViewController: UIViewController, DelegateView {
 
-    static let backgroundColor = UIColor.cyan
+    static let backgroundColor = UIColor.yellow
 
     private var saveButton: UIButton!
     private var clearButton: UIButton!
     private var textField: UITextField!
     private var label: UILabel!
 
+    private var presenter: DelegatePresenter?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = ViewControllerBasicArch.backgroundColor
+        self.view.backgroundColor = DelegateViewController.backgroundColor
+        self.presenter = DelegatePresenter(delegate: self)
 
         textField = createTextField()
         saveButton = createSaveButton()
@@ -24,10 +27,7 @@ class ViewControllerBasicArch: UIViewController {
     }
 
     @objc func save(button: UIButton) {
-        guard let text = textField.text, !text.isEmpty else {
-            return
-        }
-        self.enterViewMode(text: text)
+        presenter?.save(text: self.textField.text)
     }
 
     @objc func clear(button: UIButton) {
@@ -35,14 +35,10 @@ class ViewControllerBasicArch: UIViewController {
     }
 
     private func setupInitialView() {
-        if (ViewController.persistedText.isEmpty) {
-            self.enterEditMode()
-        } else {
-            self.enterViewMode(text: ViewController.persistedText)
-        }
+        presenter?.initialSetup()
     }
 
-    private func enterEditMode() {
+    internal func enterEditMode() {
         textField.text = String()
         ViewController.persistedText = String()
         label.isHidden = true
@@ -51,7 +47,7 @@ class ViewControllerBasicArch: UIViewController {
         textField.isHidden = false
     }
 
-    private func enterViewMode(text: String) {
+    internal func enterViewMode(text: String) {
         ViewController.persistedText = text
         label.text = text
         label.isHidden = false

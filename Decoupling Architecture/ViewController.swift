@@ -6,18 +6,18 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createButton(title: "Basic Architecture", color: ViewControllerBasicArch.backgroundColor, yPos: 100).addTarget(self, action: #selector(self.pressedBasic), for: .touchUpInside)
+        createButton(title: "Basic Architecture", color: BasicArchViewController.backgroundColor, yPos: 100).addTarget(self, action: #selector(self.pressedBasic), for: .touchUpInside)
 
-        createButton(title: "Delegate Architecture", color:  ViewControllerDelegation.backgroundColor, yPos: 200).addTarget(self, action: #selector(self.pressedDelegate), for: .touchUpInside)
+        createButton(title: "Delegate Architecture", color:  DelegateViewController.backgroundColor, yPos: 200).addTarget(self, action: #selector(self.pressedDelegate), for: .touchUpInside)
     }
 
     @objc func pressedBasic(sender: UIButton!) {
-        let viewController = ViewControllerBasicArch()
+        let viewController = BasicArchViewController()
         self.present(viewController, animated: true)
     }
 
     @objc func pressedDelegate(sender: UIButton!) {
-        let viewController = ViewControllerDelegation()
+        let viewController = DelegateViewController()
         self.present(viewController, animated: true)
     }
 
