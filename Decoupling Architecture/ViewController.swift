@@ -3,17 +3,22 @@ import UIKit
 class ViewController: UIViewController {
 
     static var persistedText: String = String()
-
-    private static let basicColor = UIColor.cyan
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        createButton(title: "Basic Architecture", color: ViewController.basicColor, yPos: 100).addTarget(self, action: #selector(self.pressed), for: .touchUpInside)
+        createButton(title: "Basic Architecture", color: ViewControllerBasicArch.backgroundColor, yPos: 100).addTarget(self, action: #selector(self.pressedBasic), for: .touchUpInside)
+
+        createButton(title: "Delegate Architecture", color:  ViewControllerDelegation.backgroundColor, yPos: 200).addTarget(self, action: #selector(self.pressedDelegate), for: .touchUpInside)
     }
 
-    @objc func pressed(sender: UIButton!) {
-        let basicViewController = ViewControllerBasicArch()
-        self.present(basicViewController, animated: true)
+    @objc func pressedBasic(sender: UIButton!) {
+        let viewController = ViewControllerBasicArch()
+        self.present(viewController, animated: true)
+    }
+
+    @objc func pressedDelegate(sender: UIButton!) {
+        let viewController = ViewControllerDelegation()
+        self.present(viewController, animated: true)
     }
 
     private func createButton(title: String, color: UIColor, yPos: Int) -> UIButton {

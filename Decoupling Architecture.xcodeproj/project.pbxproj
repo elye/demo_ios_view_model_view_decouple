@@ -15,6 +15,7 @@
 		3B5F5FD9241325A300B5631B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3B5F5FD7241325A300B5631B /* LaunchScreen.storyboard */; };
 		3B5F5FE12413306800B5631B /* ViewControllerBasicArch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FE02413306800B5631B /* ViewControllerBasicArch.swift */; };
 		3B5F5FE32413584700B5631B /* ExtensionUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FE22413584700B5631B /* ExtensionUtil.swift */; };
+		3B5F5FE524136B5B00B5631B /* ViewControllerDelegation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FE424136B5B00B5631B /* ViewControllerDelegation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		3B5F5FDA241325A300B5631B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B5F5FE02413306800B5631B /* ViewControllerBasicArch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerBasicArch.swift; sourceTree = "<group>"; };
 		3B5F5FE22413584700B5631B /* ExtensionUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionUtil.swift; sourceTree = "<group>"; };
+		3B5F5FE424136B5B00B5631B /* ViewControllerDelegation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerDelegation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				3B5F5FDA241325A300B5631B /* Info.plist */,
 				3B5F5FE02413306800B5631B /* ViewControllerBasicArch.swift */,
 				3B5F5FE22413584700B5631B /* ExtensionUtil.swift */,
+				3B5F5FE424136B5B00B5631B /* ViewControllerDelegation.swift */,
 			);
 			path = "Decoupling Architecture";
 			sourceTree = "<group>";
@@ -144,6 +147,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B5F5FE524136B5B00B5631B /* ViewControllerDelegation.swift in Sources */,
 				3B5F5FE32413584700B5631B /* ExtensionUtil.swift in Sources */,
 				3B5F5FD1241325A100B5631B /* ViewController.swift in Sources */,
 				3B5F5FCD241325A100B5631B /* AppDelegate.swift in Sources */,
