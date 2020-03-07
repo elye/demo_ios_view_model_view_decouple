@@ -2,7 +2,7 @@ import Foundation
 
 class DelegatePresenter {
 
-    private weak var delegate: DelegateView!
+    private unowned var delegate: DelegateView!
 
     init(delegate: DelegateView) {
         self.delegate = delegate
