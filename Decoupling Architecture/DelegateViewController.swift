@@ -9,12 +9,12 @@ class DelegateViewController: UIViewController, DelegateView {
     private var textField: UITextField!
     private var label: UILabel!
 
-    private var presenter: DelegatePresenter?
+    private var viewModel: DelegateViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = DelegateViewController.backgroundColor
-        self.presenter = DelegatePresenter(delegate: self)
+        self.viewModel = DelegateViewModel(delegate: self)
 
         textField = createTextField()
         saveButton = createSaveButton()
@@ -27,15 +27,15 @@ class DelegateViewController: UIViewController, DelegateView {
     }
 
     @objc func save(button: UIButton) {
-        presenter?.save(text: self.textField.text)
+        viewModel?.save(text: self.textField.text)
     }
 
     @objc func clear(button: UIButton) {
-        presenter?.clear()
+        viewModel?.clear()
     }
 
     private func setupInitialView() {
-        presenter?.initialSetup()
+        viewModel?.initialSetup()
     }
 
     internal func enterEditMode() {

@@ -6,7 +6,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createButton(title: "Basic Architecture", color: BasicArchViewController.backgroundColor, yPos: 100).addTarget(self, action: #selector(self.pressedBasic), for: .touchUpInside)
+        createButton(title: "No Architecture", color: BasicArchViewController.backgroundColor, yPos: 100).addTarget(self, action: #selector(self.pressedBasic), for: .touchUpInside)
 
         createButton(title: "Delegate Architecture", color:  DelegateViewController.backgroundColor, yPos: 200).addTarget(self, action: #selector(self.pressedDelegate), for: .touchUpInside)
 

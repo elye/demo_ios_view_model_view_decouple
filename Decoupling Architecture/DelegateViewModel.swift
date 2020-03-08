@@ -1,6 +1,6 @@
 import Foundation
 
-class DelegatePresenter {
+class DelegateViewModel {
 
     private unowned let delegate: DelegateView!
 
