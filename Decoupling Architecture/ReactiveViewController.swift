@@ -54,6 +54,7 @@ class ReactiveViewController: UIViewController {
     }
 
     private func enterViewMode(text: String) {
+        textField.resignFirstResponder()
         label.text = text
         label.isHidden = false
         clearButton.isHidden = false

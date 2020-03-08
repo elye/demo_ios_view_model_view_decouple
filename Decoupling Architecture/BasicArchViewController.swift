@@ -28,6 +28,7 @@ class BasicArchViewController: UIViewController {
             return
         }
         self.enterViewMode(text: text)
+        self.textField.resignFirstResponder()
     }
 
     @objc func clear(button: UIButton) {

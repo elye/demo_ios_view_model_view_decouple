@@ -47,6 +47,7 @@ class DelegateViewController: UIViewController, DelegateView {
     }
 
     internal func enterViewMode(text: String) {
+        textField.resignFirstResponder()
         label.text = text
         label.isHidden = false
         clearButton.isHidden = false

@@ -42,6 +42,11 @@ class UltimateReactiveViewController: UIViewController {
         }
         .dispose(in: bag)
 
+        viewModel?.isTextSetSignal.observeNext {
+            if $0 { self.textField.resignFirstResponder() }
+        }
+        .dispose(in: bag)
+
         viewModel?.isTextSetSignal.map({ !$0 }).bind(to: label.reactive.isHidden)
         viewModel?.isTextSetSignal.map({ !$0 }).bind(to: clearButton.reactive.isHidden)
         viewModel?.isTextSetSignal.bind(to: textField.reactive.isHidden)
