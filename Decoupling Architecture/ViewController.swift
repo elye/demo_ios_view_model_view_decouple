@@ -13,6 +13,8 @@ class ViewController: UIViewController {
         createButton(title: "Functional Architecture", color:  FunctionalViewController.backgroundColor, yPos:300).addTarget(self, action: #selector(self.pressedFunctional), for: .touchUpInside)
 
         createButton(title: "Reactive Architecture", color:  ReactiveViewController.backgroundColor, yPos:400).addTarget(self, action: #selector(self.pressedReactive), for: .touchUpInside)
+
+        createButton(title: "Full Reactive Architecture", color:  UltimateReactiveViewController.backgroundColor, yPos:500).addTarget(self, action: #selector(self.pressedUltimateReactive), for: .touchUpInside)
     }
 
     @objc func pressedBasic(sender: UIButton!) {
@@ -32,6 +34,11 @@ class ViewController: UIViewController {
 
     @objc func pressedReactive(sender: UIButton!) {
         let viewController = ReactiveViewController()
+        self.present(viewController, animated: true)
+    }
+
+    @objc func pressedUltimateReactive(sender: UIButton!) {
+        let viewController = UltimateReactiveViewController()
         self.present(viewController, animated: true)
     }
 

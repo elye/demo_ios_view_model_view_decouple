@@ -7,4 +7,5 @@ target 'Decoupling Architecture' do
 
   # Pods for Decoupling Architecture
   pod 'ReactiveKit', '~> 3.10'
+  pod 'Bond', '~> 7.4'
 end
