@@ -2,7 +2,7 @@ import Foundation
 
 class DelegatePresenter {
 
-    private unowned var delegate: DelegateView!
+    private unowned let delegate: DelegateView!
 
     init(delegate: DelegateView) {
         self.delegate = delegate
@@ -21,5 +21,9 @@ class DelegatePresenter {
             return
         }
         delegate.enterViewMode(text: text)
+    }
+
+    func clear() {
+        delegate.enterEditMode()
     }
 }

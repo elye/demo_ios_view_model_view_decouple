@@ -1,20 +1,20 @@
 import UIKit
 
-class DelegateViewController: UIViewController, DelegateView {
+class FunctionalViewController: UIViewController {
 
-    static let backgroundColor = UIColor.yellow
+    static let backgroundColor = UIColor.lightGray
 
     private var saveButton: UIButton!
     private var clearButton: UIButton!
     private var textField: UITextField!
     private var label: UILabel!
 
-    private var presenter: DelegatePresenter?
+    private var viewModel: FunctionalViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = DelegateViewController.backgroundColor
-        self.presenter = DelegatePresenter(delegate: self)
+        self.view.backgroundColor = FunctionalViewController.backgroundColor
+        self.viewModel = FunctionalViewModel()
 
         textField = createTextField()
         saveButton = createSaveButton()
@@ -27,18 +27,20 @@ class DelegateViewController: UIViewController, DelegateView {
     }
 
     @objc func save(button: UIButton) {
-        presenter?.save(text: self.textField.text)
+        viewModel?.save(text: self.textField.text,
+                        enterViewMode: enterViewMode)
     }
 
     @objc func clear(button: UIButton) {
-        presenter?.clear()
+        viewModel?.clear(enterEditMode: enterEditMode)
     }
 
     private func setupInitialView() {
-        presenter?.initialSetup()
+        viewModel?.initialSetup(enterEditMode: enterEditMode,
+                                enterViewMode: enterViewMode)
     }
 
-    internal func enterEditMode() {
+    private func enterEditMode() {
         textField.text = String()
         ViewController.persistedText = String()
         label.isHidden = true
@@ -47,7 +49,7 @@ class DelegateViewController: UIViewController, DelegateView {
         textField.isHidden = false
     }
 
-    internal func enterViewMode(text: String) {
+    private func enterViewMode(text: String) {
         ViewController.persistedText = text
         label.text = text
         label.isHidden = false

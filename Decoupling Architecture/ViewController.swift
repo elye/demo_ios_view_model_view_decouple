@@ -9,6 +9,8 @@ class ViewController: UIViewController {
         createButton(title: "Basic Architecture", color: BasicArchViewController.backgroundColor, yPos: 100).addTarget(self, action: #selector(self.pressedBasic), for: .touchUpInside)
 
         createButton(title: "Delegate Architecture", color:  DelegateViewController.backgroundColor, yPos: 200).addTarget(self, action: #selector(self.pressedDelegate), for: .touchUpInside)
+
+        createButton(title: "Functional Architecture", color:  FunctionalViewController.backgroundColor, yPos:300).addTarget(self, action: #selector(self.pressedFunctional), for: .touchUpInside)
     }
 
     @objc func pressedBasic(sender: UIButton!) {
@@ -18,6 +20,11 @@ class ViewController: UIViewController {
 
     @objc func pressedDelegate(sender: UIButton!) {
         let viewController = DelegateViewController()
+        self.present(viewController, animated: true)
+    }
+
+    @objc func pressedFunctional(sender: UIButton!) {
+        let viewController = FunctionalViewController()
         self.present(viewController, animated: true)
     }
 

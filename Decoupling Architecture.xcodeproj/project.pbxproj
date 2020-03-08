@@ -18,6 +18,8 @@
 		3B5F5FE524136B5B00B5631B /* DelegateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FE424136B5B00B5631B /* DelegateViewController.swift */; };
 		3B5F5FE724136E3300B5631B /* DelegatePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FE624136E3300B5631B /* DelegatePresenter.swift */; };
 		3B5F5FE924136EA900B5631B /* DelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FE824136EA900B5631B /* DelegateView.swift */; };
+		3B5F5FEB2414E71800B5631B /* FunctionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FEA2414E71800B5631B /* FunctionalViewController.swift */; };
+		3B5F5FED2414E81400B5631B /* FunctionalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FEC2414E81400B5631B /* FunctionalViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		3B5F5FE424136B5B00B5631B /* DelegateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateViewController.swift; sourceTree = "<group>"; };
 		3B5F5FE624136E3300B5631B /* DelegatePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegatePresenter.swift; sourceTree = "<group>"; };
 		3B5F5FE824136EA900B5631B /* DelegateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateView.swift; sourceTree = "<group>"; };
+		3B5F5FEA2414E71800B5631B /* FunctionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalViewController.swift; sourceTree = "<group>"; };
+		3B5F5FEC2414E81400B5631B /* FunctionalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,8 @@
 				3B5F5FE424136B5B00B5631B /* DelegateViewController.swift */,
 				3B5F5FE624136E3300B5631B /* DelegatePresenter.swift */,
 				3B5F5FE824136EA900B5631B /* DelegateView.swift */,
+				3B5F5FEA2414E71800B5631B /* FunctionalViewController.swift */,
+				3B5F5FEC2414E81400B5631B /* FunctionalViewModel.swift */,
 			);
 			path = "Decoupling Architecture";
 			sourceTree = "<group>";
@@ -154,10 +160,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B5F5FE524136B5B00B5631B /* DelegateViewController.swift in Sources */,
+				3B5F5FED2414E81400B5631B /* FunctionalViewModel.swift in Sources */,
 				3B5F5FE724136E3300B5631B /* DelegatePresenter.swift in Sources */,
 				3B5F5FE32413584700B5631B /* ExtensionUtil.swift in Sources */,
 				3B5F5FE924136EA900B5631B /* DelegateView.swift in Sources */,
 				3B5F5FD1241325A100B5631B /* ViewController.swift in Sources */,
+				3B5F5FEB2414E71800B5631B /* FunctionalViewController.swift in Sources */,
 				3B5F5FCD241325A100B5631B /* AppDelegate.swift in Sources */,
 				3B5F5FCF241325A100B5631B /* SceneDelegate.swift in Sources */,
 				3B5F5FE12413306800B5631B /* BasicArchViewController.swift in Sources */,
