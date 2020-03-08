@@ -12,9 +12,11 @@ class ViewController: UIViewController {
 
         createButton(title: "Functional Architecture", color:  FunctionalViewController.backgroundColor, yPos:300).addTarget(self, action: #selector(self.pressedFunctional), for: .touchUpInside)
 
-        createButton(title: "Reactive Architecture", color:  ReactiveViewController.backgroundColor, yPos:400).addTarget(self, action: #selector(self.pressedReactive), for: .touchUpInside)
+        createButton(title: "Notification Architecture", color:  NotificationViewController.backgroundColor, yPos:400).addTarget(self, action: #selector(self.pressedNotification), for: .touchUpInside)
 
-        createButton(title: "Full Reactive Architecture", color:  UltimateReactiveViewController.backgroundColor, yPos:500).addTarget(self, action: #selector(self.pressedUltimateReactive), for: .touchUpInside)
+        createButton(title: "Reactive Architecture", color:  ReactiveViewController.backgroundColor, yPos:500).addTarget(self, action: #selector(self.pressedReactive), for: .touchUpInside)
+
+        createButton(title: "Full Reactive Architecture", color:  UltimateReactiveViewController.backgroundColor, yPos:600).addTarget(self, action: #selector(self.pressedUltimateReactive), for: .touchUpInside)
     }
 
     @objc func pressedBasic(sender: UIButton!) {
@@ -29,6 +31,11 @@ class ViewController: UIViewController {
 
     @objc func pressedFunctional(sender: UIButton!) {
         let viewController = FunctionalViewController()
+        self.present(viewController, animated: true)
+    }
+
+    @objc func pressedNotification(sender: UIButton!) {
+        let viewController = NotificationViewController()
         self.present(viewController, animated: true)
     }
 
