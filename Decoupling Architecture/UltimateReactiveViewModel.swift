@@ -15,12 +15,12 @@ class UltimateReactiveViewModel {
         guard let text = text, !text.isEmpty else {
             return
         }
-        textSubject.send(text)
         ViewController.persistedText = text
+        textSubject.send(text)
     }
 
     func clear() {
-        textSubject.send(String())
         ViewController.persistedText = String()
+        textSubject.send(String())
     }
 }

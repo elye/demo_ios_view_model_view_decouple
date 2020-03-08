@@ -20,12 +20,12 @@ class DelegateViewModel {
         guard let text = text, !text.isEmpty else {
             return
         }
-        delegate.enterViewMode(text: text)
         ViewController.persistedText = text
+        delegate.enterViewMode(text: text)
     }
 
     func clear() {
-        delegate.enterEditMode()
         ViewController.persistedText = String()
+        delegate.enterEditMode()
     }
 }
