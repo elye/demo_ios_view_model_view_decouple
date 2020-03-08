@@ -16,10 +16,12 @@ class FunctionalViewModel {
         guard let text = text, !text.isEmpty else {
             return
         }
+        ViewController.persistedText = text
         enterViewMode(text)
     }
 
     func clear(enterEditMode: () -> Void) {
+        ViewController.persistedText = String()
         enterEditMode()
     }
 }

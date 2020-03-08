@@ -42,7 +42,6 @@ class FunctionalViewController: UIViewController {
 
     private func enterEditMode() {
         textField.text = String()
-        ViewController.persistedText = String()
         label.isHidden = true
         clearButton.isHidden = true
         saveButton.isHidden = false
@@ -50,7 +49,6 @@ class FunctionalViewController: UIViewController {
     }
 
     private func enterViewMode(text: String) {
-        ViewController.persistedText = text
         label.text = text
         label.isHidden = false
         clearButton.isHidden = false

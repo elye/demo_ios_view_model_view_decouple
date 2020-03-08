@@ -11,6 +11,8 @@ class ViewController: UIViewController {
         createButton(title: "Delegate Architecture", color:  DelegateViewController.backgroundColor, yPos: 200).addTarget(self, action: #selector(self.pressedDelegate), for: .touchUpInside)
 
         createButton(title: "Functional Architecture", color:  FunctionalViewController.backgroundColor, yPos:300).addTarget(self, action: #selector(self.pressedFunctional), for: .touchUpInside)
+
+        createButton(title: "Reactive Architecture", color:  ReactiveViewController.backgroundColor, yPos:400).addTarget(self, action: #selector(self.pressedReactive), for: .touchUpInside)
     }
 
     @objc func pressedBasic(sender: UIButton!) {
@@ -25,6 +27,11 @@ class ViewController: UIViewController {
 
     @objc func pressedFunctional(sender: UIButton!) {
         let viewController = FunctionalViewController()
+        self.present(viewController, animated: true)
+    }
+
+    @objc func pressedReactive(sender: UIButton!) {
+        let viewController = ReactiveViewController()
         self.present(viewController, animated: true)
     }
 

@@ -21,9 +21,11 @@ class DelegatePresenter {
             return
         }
         delegate.enterViewMode(text: text)
+        ViewController.persistedText = text
     }
 
     func clear() {
         delegate.enterEditMode()
+        ViewController.persistedText = String()
     }
 }

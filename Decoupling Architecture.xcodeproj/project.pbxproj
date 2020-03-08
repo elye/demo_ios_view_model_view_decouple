@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31D758658DEDDD4DC69AE309 /* Pods_Decoupling_Architecture.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 76F2BBEAD67C881DFB7B6693 /* Pods_Decoupling_Architecture.framework */; };
 		3B5F5FCD241325A100B5631B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FCC241325A100B5631B /* AppDelegate.swift */; };
 		3B5F5FCF241325A100B5631B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FCE241325A100B5631B /* SceneDelegate.swift */; };
 		3B5F5FD1241325A100B5631B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FD0241325A100B5631B /* ViewController.swift */; };
@@ -20,9 +21,12 @@
 		3B5F5FE924136EA900B5631B /* DelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FE824136EA900B5631B /* DelegateView.swift */; };
 		3B5F5FEB2414E71800B5631B /* FunctionalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FEA2414E71800B5631B /* FunctionalViewController.swift */; };
 		3B5F5FED2414E81400B5631B /* FunctionalViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FEC2414E81400B5631B /* FunctionalViewModel.swift */; };
+		3B5F5FEF2414F05D00B5631B /* ReactiveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FEE2414F05D00B5631B /* ReactiveViewController.swift */; };
+		3B5F5FF12414F23A00B5631B /* ReactiveViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B5F5FF02414F23A00B5631B /* ReactiveViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		22E5376B5D88102F7E2B9F87 /* Pods-Decoupling Architecture.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decoupling Architecture.release.xcconfig"; path = "Target Support Files/Pods-Decoupling Architecture/Pods-Decoupling Architecture.release.xcconfig"; sourceTree = "<group>"; };
 		3B5F5FC9241325A100B5631B /* Decoupling Architecture.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Decoupling Architecture.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B5F5FCC241325A100B5631B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3B5F5FCE241325A100B5631B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,10 @@
 		3B5F5FE824136EA900B5631B /* DelegateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateView.swift; sourceTree = "<group>"; };
 		3B5F5FEA2414E71800B5631B /* FunctionalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalViewController.swift; sourceTree = "<group>"; };
 		3B5F5FEC2414E81400B5631B /* FunctionalViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FunctionalViewModel.swift; sourceTree = "<group>"; };
+		3B5F5FEE2414F05D00B5631B /* ReactiveViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveViewController.swift; sourceTree = "<group>"; };
+		3B5F5FF02414F23A00B5631B /* ReactiveViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReactiveViewModel.swift; sourceTree = "<group>"; };
+		76F2BBEAD67C881DFB7B6693 /* Pods_Decoupling_Architecture.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Decoupling_Architecture.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E000DA6C12CB54D56E0C05F1 /* Pods-Decoupling Architecture.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Decoupling Architecture.debug.xcconfig"; path = "Target Support Files/Pods-Decoupling Architecture/Pods-Decoupling Architecture.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +53,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31D758658DEDDD4DC69AE309 /* Pods_Decoupling_Architecture.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0BF4F569B5E48D9AE9C968B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				76F2BBEAD67C881DFB7B6693 /* Pods_Decoupling_Architecture.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		3B5F5FC0241325A100B5631B = {
 			isa = PBXGroup;
 			children = (
 				3B5F5FCB241325A100B5631B /* Decoupling Architecture */,
 				3B5F5FCA241325A100B5631B /* Products */,
+				CD719E2C736E1434704D0420 /* Pods */,
+				0BF4F569B5E48D9AE9C968B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -84,8 +103,19 @@
 				3B5F5FE824136EA900B5631B /* DelegateView.swift */,
 				3B5F5FEA2414E71800B5631B /* FunctionalViewController.swift */,
 				3B5F5FEC2414E81400B5631B /* FunctionalViewModel.swift */,
+				3B5F5FEE2414F05D00B5631B /* ReactiveViewController.swift */,
+				3B5F5FF02414F23A00B5631B /* ReactiveViewModel.swift */,
 			);
 			path = "Decoupling Architecture";
+			sourceTree = "<group>";
+		};
+		CD719E2C736E1434704D0420 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E000DA6C12CB54D56E0C05F1 /* Pods-Decoupling Architecture.debug.xcconfig */,
+				22E5376B5D88102F7E2B9F87 /* Pods-Decoupling Architecture.release.xcconfig */,
+			);
+			path = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -95,9 +125,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3B5F5FDD241325A300B5631B /* Build configuration list for PBXNativeTarget "Decoupling Architecture" */;
 			buildPhases = (
+				E30AE198A7035264D293C4DD /* [CP] Check Pods Manifest.lock */,
 				3B5F5FC5241325A100B5631B /* Sources */,
 				3B5F5FC6241325A100B5631B /* Frameworks */,
 				3B5F5FC7241325A100B5631B /* Resources */,
+				74FD7B3D53343D5BEFC332A7 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -154,6 +186,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		74FD7B3D53343D5BEFC332A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Decoupling Architecture/Pods-Decoupling Architecture-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Decoupling Architecture/Pods-Decoupling Architecture-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Decoupling Architecture/Pods-Decoupling Architecture-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E30AE198A7035264D293C4DD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Decoupling Architecture-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		3B5F5FC5241325A100B5631B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -165,8 +239,10 @@
 				3B5F5FE32413584700B5631B /* ExtensionUtil.swift in Sources */,
 				3B5F5FE924136EA900B5631B /* DelegateView.swift in Sources */,
 				3B5F5FD1241325A100B5631B /* ViewController.swift in Sources */,
+				3B5F5FEF2414F05D00B5631B /* ReactiveViewController.swift in Sources */,
 				3B5F5FEB2414E71800B5631B /* FunctionalViewController.swift in Sources */,
 				3B5F5FCD241325A100B5631B /* AppDelegate.swift in Sources */,
+				3B5F5FF12414F23A00B5631B /* ReactiveViewModel.swift in Sources */,
 				3B5F5FCF241325A100B5631B /* SceneDelegate.swift in Sources */,
 				3B5F5FE12413306800B5631B /* BasicArchViewController.swift in Sources */,
 			);
@@ -310,6 +386,7 @@
 		};
 		3B5F5FDE241325A300B5631B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E000DA6C12CB54D56E0C05F1 /* Pods-Decoupling Architecture.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -327,6 +404,7 @@
 		};
 		3B5F5FDF241325A300B5631B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 22E5376B5D88102F7E2B9F87 /* Pods-Decoupling Architecture.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

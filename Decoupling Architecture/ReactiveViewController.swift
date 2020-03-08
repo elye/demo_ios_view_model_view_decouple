@@ -1,20 +1,21 @@
 import UIKit
+import ReactiveKit
 
-class DelegateViewController: UIViewController, DelegateView {
+class ReactiveViewController: UIViewController {
 
-    static let backgroundColor = UIColor.yellow
+    static let backgroundColor = UIColor.orange
 
     private var saveButton: UIButton!
     private var clearButton: UIButton!
     private var textField: UITextField!
     private var label: UILabel!
 
-    private var presenter: DelegatePresenter?
+    private var viewModel: ReactiveViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = DelegateViewController.backgroundColor
-        self.presenter = DelegatePresenter(delegate: self)
+        self.view.backgroundColor = ReactiveViewController.backgroundColor
+        self.viewModel = ReactiveViewModel()
 
         textField = createTextField()
         saveButton = createSaveButton()
@@ -23,22 +24,28 @@ class DelegateViewController: UIViewController, DelegateView {
         saveButton.addTarget(self, action: #selector(self.save), for: .touchUpInside)
         clearButton.addTarget(self, action: #selector(self.clear), for: .touchUpInside)
 
-        setupInitialView()
+        setupBindings()
     }
 
     @objc func save(button: UIButton) {
-        presenter?.save(text: self.textField.text)
+        viewModel?.save(text: self.textField.text)
     }
 
     @objc func clear(button: UIButton) {
-        presenter?.clear()
+        viewModel?.clear()
     }
 
-    private func setupInitialView() {
-        presenter?.initialSetup()
+    private func setupBindings() {
+        viewModel?.textSubject.observeNext { [unowned self] text in
+            if text.isEmpty {
+                self.enterEditMode()
+            } else {
+                self.enterViewMode(text: text)
+            }
+        }.dispose(in: bag)
     }
 
-    internal func enterEditMode() {
+    private func enterEditMode() {
         textField.text = String()
         label.isHidden = true
         clearButton.isHidden = true
@@ -46,7 +53,7 @@ class DelegateViewController: UIViewController, DelegateView {
         textField.isHidden = false
     }
 
-    internal func enterViewMode(text: String) {
+    private func enterViewMode(text: String) {
         label.text = text
         label.isHidden = false
         clearButton.isHidden = false
