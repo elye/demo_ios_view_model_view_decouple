@@ -15,7 +15,7 @@ class NotificationViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         NotificationCenter.default.addObserver(
-            self, selector: #selector(getTextUpdate),
+            self, selector: #selector(gotNotified(_:)),
             name: NSNotification.Name(rawValue: NotificationModel.textSetNotification),
             object: nil)
     }
@@ -35,7 +35,7 @@ class NotificationViewController: UIViewController {
         clearButton = createClearButton()
         saveButton.addTarget(self, action: #selector(self.save), for: .touchUpInside)
         clearButton.addTarget(self, action: #selector(self.clear), for: .touchUpInside)
-        getTextUpdate()
+        getTextUpdate(text: NotificationModel.sharedInstance.text)
     }
 
     deinit {
@@ -52,8 +52,12 @@ class NotificationViewController: UIViewController {
         viewModel?.clear()
     }
 
-    @objc private func getTextUpdate() {
-        if let text = NotificationModel.sharedInstance.text, !text.isEmpty {
+    @objc private func gotNotified(_ notification: NSNotification) {
+        getTextUpdate(text: notification.userInfo?[NotificationModel.textKey] as? String)
+    }
+
+    @objc private func getTextUpdate(text: String?) {
+        if let text = text, !text.isEmpty {
             enterViewMode(text: text)
         } else {
             enterEditMode()
