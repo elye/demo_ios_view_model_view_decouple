@@ -12,6 +12,18 @@ class NotificationViewController: UIViewController {
 
     private var viewModel: NotificationViewModel?
 
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(getTextUpdate),
+            name: NSNotification.Name(rawValue: NotificationModel.textSetNotification),
+            object: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = NotificationViewController.backgroundColor
@@ -23,13 +35,13 @@ class NotificationViewController: UIViewController {
         clearButton = createClearButton()
         saveButton.addTarget(self, action: #selector(self.save), for: .touchUpInside)
         clearButton.addTarget(self, action: #selector(self.clear), for: .touchUpInside)
-
-        NotificationCenter.default.addObserver(
-            self, selector: #selector(getTextUpdate),
-            name: NSNotification.Name(rawValue: NotificationModel.textSetNotification),
-            object: nil)
-
         getTextUpdate()
+    }
+
+    deinit {
+      NotificationCenter.default.removeObserver(
+        self, name: NSNotification.Name(rawValue: NotificationModel.textSetNotification),
+        object: self)
     }
 
     @objc func save(button: UIButton) {
