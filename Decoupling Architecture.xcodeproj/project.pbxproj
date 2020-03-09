@@ -113,13 +113,13 @@
 				3B5F5FE824136EA900B5631B /* DelegateView.swift */,
 				3B5F5FEA2414E71800B5631B /* FunctionalViewController.swift */,
 				3B5F5FEC2414E81400B5631B /* FunctionalViewModel.swift */,
+				3B5F5FFA2415349300B5631B /* NotificationModel.swift */,
+				3B5F5FF624152FA600B5631B /* NotificationViewController.swift */,
+				3B5F5FF824152FFD00B5631B /* NotificationViewModel.swift */,
 				3B5F5FEE2414F05D00B5631B /* ReactiveViewController.swift */,
 				3B5F5FF02414F23A00B5631B /* ReactiveViewModel.swift */,
 				3B5F5FF22415219E00B5631B /* UltimateReactiveViewController.swift */,
 				3B5F5FF4241521EB00B5631B /* UltimateReactiveViewModel.swift */,
-				3B5F5FF624152FA600B5631B /* NotificationViewController.swift */,
-				3B5F5FF824152FFD00B5631B /* NotificationViewModel.swift */,
-				3B5F5FFA2415349300B5631B /* NotificationModel.swift */,
 			);
 			path = "Decoupling Architecture";
 			sourceTree = "<group>";
