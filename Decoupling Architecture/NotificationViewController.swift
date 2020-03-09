@@ -35,13 +35,17 @@ class NotificationViewController: UIViewController {
         clearButton = createClearButton()
         saveButton.addTarget(self, action: #selector(self.save), for: .touchUpInside)
         clearButton.addTarget(self, action: #selector(self.clear), for: .touchUpInside)
-        getTextUpdate(text: NotificationModel.sharedInstance.text)
+        setupInitialView()
     }
 
     deinit {
       NotificationCenter.default.removeObserver(
         self, name: NSNotification.Name(rawValue: NotificationModel.textSetNotification),
         object: self)
+    }
+
+    private func setupInitialView() {
+        viewModel?.initialSetup()
     }
 
     @objc func save(button: UIButton) {
@@ -53,10 +57,10 @@ class NotificationViewController: UIViewController {
     }
 
     @objc private func gotNotified(_ notification: NSNotification) {
-        getTextUpdate(text: notification.userInfo?[NotificationModel.textKey] as? String)
+        setTextUpdate(text: notification.userInfo?[NotificationModel.textKey] as? String)
     }
 
-    @objc private func getTextUpdate(text: String?) {
+    private func setTextUpdate(text: String?) {
         if let text = text, !text.isEmpty {
             enterViewMode(text: text)
         } else {
