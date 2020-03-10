@@ -9,7 +9,7 @@ class UltimateReactiveViewController: UIViewController {
     private var saveButton: UIButton!
     private var clearButton: UIButton!
     private var textField: UITextField!
-    private var label: UILabel!
+    private var textLabel: UILabel!
 
     private var viewModel: UltimateReactiveViewModel?
 
@@ -20,7 +20,7 @@ class UltimateReactiveViewController: UIViewController {
 
         textField = createTextField()
         saveButton = createSaveButton()
-        label = createLabel()
+        textLabel = createTextLabel()
         clearButton = createClearButton()
         setupBindings()
     }
@@ -38,7 +38,7 @@ class UltimateReactiveViewController: UIViewController {
 
         viewModel?.textSubject.observeNext { [unowned self] text in
             self.textField.text = text
-            self.label.text = text
+            self.textLabel.text = text
         }
         .dispose(in: bag)
 
@@ -47,9 +47,13 @@ class UltimateReactiveViewController: UIViewController {
         }
         .dispose(in: bag)
 
-        viewModel?.isTextSetSignal.map({ !$0 }).bind(to: label.reactive.isHidden)
+        viewModel?.isTextSetSignal.map({ !$0 }).bind(to: textLabel.reactive.isHidden)
+            .dispose(in: bag)
         viewModel?.isTextSetSignal.map({ !$0 }).bind(to: clearButton.reactive.isHidden)
+            .dispose(in: bag)
         viewModel?.isTextSetSignal.bind(to: textField.reactive.isHidden)
+            .dispose(in: bag)
         viewModel?.isTextSetSignal.bind(to: saveButton.reactive.isHidden)
+            .dispose(in: bag)
     }
 }

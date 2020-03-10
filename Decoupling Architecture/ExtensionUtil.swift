@@ -17,7 +17,7 @@ extension UIViewController {
         return textField
     }
 
-    func createLabel() -> UILabel {
+    func createTextLabel() -> UILabel {
         let textLabel = UILabel()
         textLabel.textAlignment = .center
         textLabel.setupView(parentView: self.view, yPos: 100, color: .gray)
@@ -30,6 +30,13 @@ extension UIViewController {
         button.setTitleColor(UIColor.white, for: UIControl.State())
         button.setupView(parentView: self.view, yPos: 200, color: .blue)
         return button
+    }
+
+    func createStatusLabel() -> UILabel {
+        let textLabel = UILabel()
+        textLabel.textAlignment = .center
+        textLabel.setupView(parentView: self.view, yPos: 300, color: .gray)
+        return textLabel
     }
 }
 

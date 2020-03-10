@@ -7,7 +7,7 @@ class DelegateViewController: UIViewController, DelegateView {
     private var saveButton: UIButton!
     private var clearButton: UIButton!
     private var textField: UITextField!
-    private var label: UILabel!
+    private var textLabel: UILabel!
 
     private var viewModel: DelegateViewModel?
 
@@ -18,7 +18,7 @@ class DelegateViewController: UIViewController, DelegateView {
 
         textField = createTextField()
         saveButton = createSaveButton()
-        label = createLabel()
+        textLabel = createTextLabel()
         clearButton = createClearButton()
         saveButton.addTarget(self, action: #selector(self.save), for: .touchUpInside)
         clearButton.addTarget(self, action: #selector(self.clear), for: .touchUpInside)
@@ -40,7 +40,7 @@ class DelegateViewController: UIViewController, DelegateView {
 
     internal func enterEditMode() {
         textField.text = String()
-        label.isHidden = true
+        textLabel.isHidden = true
         clearButton.isHidden = true
         saveButton.isHidden = false
         textField.isHidden = false
@@ -48,8 +48,8 @@ class DelegateViewController: UIViewController, DelegateView {
 
     internal func enterViewMode(text: String) {
         textField.resignFirstResponder()
-        label.text = text
-        label.isHidden = false
+        textLabel.text = text
+        textLabel.isHidden = false
         clearButton.isHidden = false
         saveButton.isHidden = true
         textField.isHidden = true
