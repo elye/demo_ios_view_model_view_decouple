@@ -43,17 +43,19 @@ class UltimateReactiveViewController: UIViewController {
 
         viewModel?.isTextSetSignal.observeNext {
             if $0 { self.textField.resignFirstResponder() }
-            if $0 { self.statusLabel.text = UIViewController.viewMode }
-            else { self.statusLabel.text = UIViewController.editMode }
         }.dispose(in: bag)
 
-        viewModel?.isTextSetSignal.map({ !$0 }).bind(to: textLabel.reactive.isHidden)
+        viewModel?.modeTextSignal.observeNext {
+            self.statusLabel.text = $0
+        }.dispose(in: bag)
+
+        viewModel?.hideTextLabel.bind(to: textLabel.reactive.isHidden)
             .dispose(in: bag)
-        viewModel?.isTextSetSignal.map({ !$0 }).bind(to: clearButton.reactive.isHidden)
+        viewModel?.hideClearButton.bind(to: clearButton.reactive.isHidden)
             .dispose(in: bag)
-        viewModel?.isTextSetSignal.bind(to: textField.reactive.isHidden)
+        viewModel?.hideTextField.bind(to: textField.reactive.isHidden)
             .dispose(in: bag)
-        viewModel?.isTextSetSignal.bind(to: saveButton.reactive.isHidden)
+        viewModel?.hideSaveButton.bind(to: saveButton.reactive.isHidden)
             .dispose(in: bag)
     }
 }

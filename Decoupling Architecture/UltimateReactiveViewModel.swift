@@ -3,8 +3,13 @@ import ReactiveKit
 class UltimateReactiveViewModel {
 
     let textSubject = ReplayOneSubject<String, Never>()
-    var isTextSetSignal: Signal<Bool, Never> {
-        textSubject.map { !$0.isEmpty }
+    var isTextSetSignal: Signal<Bool, Never> { textSubject.map { !$0.isEmpty } }
+    var hideTextField: Signal<Bool, Never> { isTextSetSignal }
+    var hideSaveButton: Signal<Bool, Never> { isTextSetSignal }
+    var hideTextLabel: Signal<Bool, Never> { isTextSetSignal.map { !$0 } }
+    var hideClearButton: Signal<Bool, Never> { isTextSetSignal.map { !$0 } }
+    var modeTextSignal: Signal<String, Never> { isTextSetSignal.map {
+        self.editModeText(isTextSet: $0) }
     }
 
     init() {
@@ -22,5 +27,13 @@ class UltimateReactiveViewModel {
     func clear() {
         ViewController.persistedText = String()
         textSubject.send(String())
+    }
+
+    private func editModeText(isTextSet: Bool) -> String {
+        if (isTextSet) {
+            return ViewController.viewMode
+        } else {
+            return ViewController.editMode
+        }
     }
 }
