@@ -1,6 +1,9 @@
 import UIKit
 
 extension UIViewController {
+    static let editMode = "Edit Mode"
+    static let viewMode = "View Mode"
+
     func createSaveButton() -> UIButton {
         let button = UIButton()
         button.setTitle("Save", for: UIControl.State())
@@ -35,7 +38,7 @@ extension UIViewController {
     func createStatusLabel() -> UILabel {
         let textLabel = UILabel()
         textLabel.textAlignment = .center
-        textLabel.setupView(parentView: self.view, yPos: 300, color: .gray)
+        textLabel.setupView(parentView: self.view, yPos: 300, color: .clear)
         return textLabel
     }
 }

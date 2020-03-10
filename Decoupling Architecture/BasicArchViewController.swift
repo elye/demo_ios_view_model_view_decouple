@@ -18,6 +18,8 @@ class BasicArchViewController: UIViewController {
         saveButton = createSaveButton()
         textLabel = createTextLabel()
         clearButton = createClearButton()
+        statusLabel = createStatusLabel()
+        
         saveButton.addTarget(self, action: #selector(self.save), for: .touchUpInside)
         clearButton.addTarget(self, action: #selector(self.clear), for: .touchUpInside)
 
@@ -45,6 +47,7 @@ class BasicArchViewController: UIViewController {
 
     private func enterEditMode() {
         ViewController.persistedText = String()
+        statusLabel.text = UIViewController.editMode
         textField.resignFirstResponder()
         textField.text = String()
         textLabel.isHidden = true
@@ -55,6 +58,7 @@ class BasicArchViewController: UIViewController {
 
     private func enterViewMode(text: String) {
         ViewController.persistedText = text
+        statusLabel.text = UIViewController.viewMode
         textLabel.text = text
         textLabel.isHidden = false
         clearButton.isHidden = false
