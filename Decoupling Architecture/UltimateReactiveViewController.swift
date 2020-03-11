@@ -41,12 +41,12 @@ class UltimateReactiveViewController: UIViewController {
             self.textLabel.text = text
         }.dispose(in: bag)
 
-        viewModel?.isTextSetSignal.observeNext {
-            if $0 { self.textField.resignFirstResponder() }
-        }.dispose(in: bag)
-
         viewModel?.modeTextSignal.observeNext {
             self.statusLabel.text = $0
+        }.dispose(in: bag)
+
+        viewModel?.hideKeyboardSignal.observeNext{
+            self.textField.resignFirstResponder()
         }.dispose(in: bag)
 
         viewModel?.hideTextLabel.bind(to: textLabel.reactive.isHidden)

@@ -3,11 +3,12 @@ import ReactiveKit
 class UltimateReactiveViewModel {
 
     let textSubject = ReplayOneSubject<String, Never>()
-    var isTextSetSignal: Signal<Bool, Never> { textSubject.map { !$0.isEmpty } }
+    private var isTextSetSignal: Signal<Bool, Never> { textSubject.map { !$0.isEmpty } }
     var hideTextField: Signal<Bool, Never> { isTextSetSignal }
     var hideSaveButton: Signal<Bool, Never> { isTextSetSignal }
     var hideTextLabel: Signal<Bool, Never> { isTextSetSignal.map { !$0 } }
     var hideClearButton: Signal<Bool, Never> { isTextSetSignal.map { !$0 } }
+    var hideKeyboardSignal: Signal<Void, Never> { isTextSetSignal.filter{ $0 }.map{ _ in } }
     var modeTextSignal: Signal<String, Never> { isTextSetSignal.map {
         self.editModeText(isTextSet: $0) }
     }
