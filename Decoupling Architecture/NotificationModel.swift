@@ -4,7 +4,9 @@ class NotificationModel {
     static let textSetNotification = "textSetNotification"
     static let textKey = "text"
     static var sharedInstance = NotificationModel()
-    private init() { }
+    private init() {
+        text = ViewController.persistedText
+    }
     var text: String? {
         didSet {
             ViewController.persistedText = text ?? String()

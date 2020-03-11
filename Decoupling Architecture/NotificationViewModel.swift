@@ -3,7 +3,7 @@ import Foundation
 class NotificationViewModel {
 
     func initialSetup() {
-        NotificationModel.sharedInstance.text = ViewController.persistedText
+        NotificationModel.sharedInstance.text = NotificationModel.sharedInstance.text
     }
 
     func save(text: String?) {
